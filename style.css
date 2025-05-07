@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: rgb(56, 208, 228);
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+  }
+  .gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .modal {
+    display: none;
+    width: 520px;
+    height: 620px;
+    padding: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 3px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(98, 235, 253);
+}
+
+.modal button{
+  margin-top: 3px;
+  width: 200px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px solid rgb(182, 182, 182);
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s linear;
+}
+
+.modal button:hover{
+  cursor: pointer;
+  background-color: rgb(216, 214, 214);
+  border: 1px solid rgb(98, 235, 253);
+  transition: all 0.5s linear;
+}
+
+.modal img{
+  width: 520px;
+  height: 520px;
+}
+
+.button{
+  width: 150px;
+  height: 50px;
+  font-size: 17px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 5px;
+  background-color: rgb(98, 235, 253);
+  transition: all 0.5s linear;
+}
+
+.button:hover{
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(87, 208, 224);
+  transition: all 0.5s linear;
+}
+
+.modal_button{
+  width: 320px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  background-color: rgb(105, 238, 255);
+}
+
+.modal_button button{
+  margin-top: 30px;
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 174, 174);
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s linear;
+}
+
+.modal_button button:hover{
+  cursor: pointer;
+  border: 1px solid rgb(105, 238, 255);
+  background-color: rgb(219, 219, 219);
+  transition: all 0.5s linear;
+}
+
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+    }
+    .gallery img {
+      height: 90px;
+    }
+  }
