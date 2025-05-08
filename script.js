@@ -56,12 +56,12 @@ button.addEventListener('click', () => {
 });
 
 button_add.addEventListener('click', () => {
-    const url = image_url.value.trim(); // Удаляет пробелы с начала и конца строки
+    const url = image_url.value.trim(); // Remove whitespace
     if(url){
-        urlData.push(url);
+        // Add new image url at the start of array for left placement
+        urlData.unshift(url);
         saveToLocalStorage();
-        const img = createImg(url); 
-        gallery.prepend(img);
+        refreshGallery();
         image_url.value = '';
         modal_button.style.display = 'none'; 
     } else{
@@ -70,9 +70,10 @@ button_add.addEventListener('click', () => {
 });
 
 function addImg() {
+    // Add images in order from left to right by appending
     urlData.forEach(url => {
         const img = createImg(url);
-        gallery.appendChild(img); 
+        gallery.appendChild(img);
     });
 }
 
